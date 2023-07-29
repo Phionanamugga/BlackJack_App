@@ -13,5 +13,16 @@ computer_cards = []
 for _ in range(2):
     user_cards.append(deal_card())
     computer_cards.append(deal_card())
-    
 
+def calculate_score(cards):
+    if 11 in cards and 10 in cards and len(cards) == 2:
+        return 0
+    
+  # inside calculate_score check for 11, if its there and score is 20, make 11 a 1  
+    if 11 in cards and sum(cards) > 21:
+        cards.remove(11) 
+        cards.append(1)
+        return sum(cards)
+
+# checking for a Blackjack
+#     
